@@ -63,6 +63,7 @@ MalItemPtr MalList::eval(MalEnvPtr env){
         if(m_items.size()==0){
             return shared_from_this();
         }
+        //std::cout<<m_items.size();
         MalItemPtrIter iter = m_items.begin();
         std::string name = (*iter)->toString();
         MalItemPtr op = (*iter)->eval(env);
@@ -86,6 +87,10 @@ MalItemPtr MalMap::eval(MalEnvPtr env){
     }
     return nMap;
 }
+
 MalItemPtr MalSymbol::eval(MalEnvPtr env){
-    return env->get(m_symbol);
+    auto value = env->get(toString());
+    //std::cout<<"get "<<toString()<<std::endl;
+    ASSERT(value!=nullptr,"'"+toString()+"' not found");
+    return value;
 }

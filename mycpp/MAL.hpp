@@ -19,5 +19,7 @@ MalItemPtr builtin_add(MalEnvPtr env, MalItemPtrIter argsBegin, MalItemPtrIter a
 MalItemPtr builtin_sub(MalEnvPtr env, MalItemPtrIter argsBegin, MalItemPtrIter argsEnd);
 MalItemPtr builtin_mul(MalEnvPtr env, MalItemPtrIter argsBegin, MalItemPtrIter argsEnd);
 MalItemPtr builtin_div(MalEnvPtr env, MalItemPtrIter argsBegin, MalItemPtrIter argsEnd);
+MalItemPtr builtin_def(MalEnvPtr env, MalItemPtrIter argsBegin, MalItemPtrIter argsEnd);
+MalItemPtr builtin_let(MalEnvPtr env, MalItemPtrIter argsBegin, MalItemPtrIter argsEnd);
 
 #endif

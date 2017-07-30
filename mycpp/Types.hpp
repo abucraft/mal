@@ -24,6 +24,7 @@ class MalList : public MalItem{
     MalList():m_isVector(false){}
     MalItemPtr eval(MalEnvPtr) override;
     std::vector<MalItemPtr> m_items;
+    bool isVector(){return m_isVector;}
     std::string toString() const override;
     ~MalList(){}
 };
